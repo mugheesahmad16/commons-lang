@@ -646,7 +646,7 @@ public class FailableFunctionsTest extends AbstractLangTest {
             t.setThrowable(th);
             t.test();
         };
-        final FailableBiConsumer<Testable<?, ?>, Throwable, Throwable> nop = FailableBiConsumer.NOP();
+        final FailableBiConsumer<Testable<?, ?>, Throwable, Throwable> nop = FailableBiConsumer.nop();
         Throwable e = assertThrows(OutOfMemoryError.class, () -> nop.andThen(failing).accept(testable, ERROR));
         assertSame(ERROR, e);
         e = assertThrows(OutOfMemoryError.class, () -> failing.andThen(nop).accept(testable, ERROR));
