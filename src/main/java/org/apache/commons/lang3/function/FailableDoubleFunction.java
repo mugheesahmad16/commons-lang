@@ -31,7 +31,7 @@ public interface FailableDoubleFunction<R, E extends Throwable> {
 
     /** NOP singleton */
     @SuppressWarnings("rawtypes")
-    FailableDoubleFunction NOP = t -> null;
+    FailableDoubleFunction nop = t -> null;
 
     /**
      * Returns The NOP singleton.
@@ -42,7 +42,7 @@ public interface FailableDoubleFunction<R, E extends Throwable> {
      */
     @SuppressWarnings("unchecked")
     static <R, E extends Throwable> FailableDoubleFunction<R, E> nop() {
-        return NOP;
+        return nop;
     }
 
     /**

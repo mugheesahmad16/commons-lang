@@ -37,7 +37,7 @@ public interface FailableConsumer<T, E extends Throwable> {
 
     /** NOP singleton */
     @SuppressWarnings("rawtypes")
-    FailableConsumer NOP = Function.identity()::apply;
+    FailableConsumer nop = Function.identity()::apply;
 
     /**
      * Returns The NOP singleton.
@@ -48,7 +48,7 @@ public interface FailableConsumer<T, E extends Throwable> {
      */
     @SuppressWarnings("unchecked")
     static <T, E extends Throwable> FailableConsumer<T, E> nop() {
-        return NOP;
+        return nop;
     }
 
     /**

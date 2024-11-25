@@ -30,7 +30,7 @@ public interface FailableLongUnaryOperator<E extends Throwable> {
 
     /** NOP singleton */
     @SuppressWarnings("rawtypes")
-    FailableLongUnaryOperator NOP = t -> 0L;
+    FailableLongUnaryOperator nop = t -> 0L;
 
     /**
      * Returns a unary operator that always returns its input argument.
@@ -50,7 +50,7 @@ public interface FailableLongUnaryOperator<E extends Throwable> {
      */
     @SuppressWarnings("unchecked")
     static <E extends Throwable> FailableLongUnaryOperator<E> nop() {
-        return NOP;
+        return nop;
     }
 
     /**

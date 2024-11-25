@@ -31,7 +31,7 @@ public interface FailableObjDoubleConsumer<T, E extends Throwable> {
 
     /** NOP singleton */
     @SuppressWarnings("rawtypes")
-    FailableObjDoubleConsumer NOP = (t, u) -> { /* NOP */ };
+    FailableObjDoubleConsumer nop = (t, u) -> { /* NOP */ };
 
     /**
      * Returns The NOP singleton.
@@ -42,7 +42,7 @@ public interface FailableObjDoubleConsumer<T, E extends Throwable> {
      */
     @SuppressWarnings("unchecked")
     static <T, E extends Throwable> FailableObjDoubleConsumer<T, E> nop() {
-        return NOP;
+        return nop;
     }
 
     /**

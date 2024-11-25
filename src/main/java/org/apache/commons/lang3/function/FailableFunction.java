@@ -33,7 +33,7 @@ public interface FailableFunction<T, R, E extends Throwable> {
 
     /** NOP singleton */
     @SuppressWarnings("rawtypes")
-    FailableFunction NOP = t -> null;
+    FailableFunction nop = t -> null;
 
     /**
      * Starts a fluent chain like {@code function(foo::bar).andThen(...).andThen(...).apply(...);}
@@ -70,7 +70,7 @@ public interface FailableFunction<T, R, E extends Throwable> {
      */
     @SuppressWarnings("unchecked")
     static <T, R, E extends Throwable> FailableFunction<T, R, E> nop() {
-        return NOP;
+        return nop;
     }
 
     /**
