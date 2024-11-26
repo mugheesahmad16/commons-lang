@@ -38,7 +38,7 @@ public interface FailableSupplier<T, E extends Throwable> {
      * @since 3.14.0
      */
     @SuppressWarnings("rawtypes")
-    FailableSupplier NUL = () -> null;
+    FailableSupplier nul = () -> null;
 
     /**
      * Returns the singleton supplier that always returns null.
@@ -53,7 +53,7 @@ public interface FailableSupplier<T, E extends Throwable> {
      */
     @SuppressWarnings("unchecked")
     static <T, E extends Exception> FailableSupplier<T, E> nul() {
-        return NUL;
+        return nul;
     }
 
     /**
