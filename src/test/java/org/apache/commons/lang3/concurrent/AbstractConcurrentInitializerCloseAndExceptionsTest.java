@@ -124,7 +124,7 @@ public abstract class AbstractConcurrentInitializerCloseAndExceptionsTest extend
     public void testSupplierThrowsCheckedException() {
         final ConcurrentInitializer<CloseableObject> initializer = createInitializerThatThrowsException(
                 () -> methodThatThrowsException(ExceptionToThrow.IOException),
-                FailableConsumer.NOP);
+                FailableConsumer.nop);
         assertThrows(ConcurrentException.class, () -> initializer.get());
     }
 
@@ -144,7 +144,7 @@ public abstract class AbstractConcurrentInitializerCloseAndExceptionsTest extend
                     }
                     return new CloseableObject();
                 },
-                FailableConsumer.NOP);
+                FailableConsumer.nop);
         try {
             initializer.get();
             fail();
@@ -162,7 +162,7 @@ public abstract class AbstractConcurrentInitializerCloseAndExceptionsTest extend
     public void testSupplierThrowsRuntimeException() {
         final ConcurrentInitializer<CloseableObject> initializer = createInitializerThatThrowsException(
                 () -> methodThatThrowsException(ExceptionToThrow.NullPointerException),
-                FailableConsumer.NOP);
+                FailableConsumer.nop);
         assertThrows(NullPointerException.class, () -> initializer.get());
     }
 

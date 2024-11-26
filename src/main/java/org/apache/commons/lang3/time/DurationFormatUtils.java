@@ -216,7 +216,7 @@ public class DurationFormatUtils {
 
     static final String H = "H";
 
-    static final String m = "m";
+    static final String ma = "m";
 
     static final String s = "s";
 
@@ -291,7 +291,7 @@ public class DurationFormatUtils {
                 if (!inOptional || !lastOutputZero) {
                     buffer.append(paddedValue(hours, padWithZeros, count));
                 }
-            } else if (value.equals(m)) {
+            } else if (value.equals(ma)) {
                 lastOutputSeconds = false;
                 lastOutputZero = minutes == 0;
                 if (!inOptional || !lastOutputZero) {
@@ -374,7 +374,7 @@ public class DurationFormatUtils {
             hours = milliseconds / DateUtils.MILLIS_PER_HOUR;
             milliseconds -= hours * DateUtils.MILLIS_PER_HOUR;
         }
-        if (Token.containsTokenWithValue(tokens, m)) {
+        if (Token.containsTokenWithValue(tokens, ma)) {
             minutes = milliseconds / DateUtils.MILLIS_PER_MINUTE;
             milliseconds -= minutes * DateUtils.MILLIS_PER_MINUTE;
         }
@@ -645,7 +645,7 @@ public class DurationFormatUtils {
             minutes += MINUTES_PER_HOUR * hours;
             hours = 0;
         }
-        if (!Token.containsTokenWithValue(tokens, m)) {
+        if (!Token.containsTokenWithValue(tokens, ma)) {
             seconds += SECONDS_PER_MINUTES * minutes;
             minutes = 0;
         }
@@ -732,7 +732,7 @@ public class DurationFormatUtils {
                 value = H;
                 break;
             case 'm':
-                value = m;
+                value = ma;
                 break;
             case 's':
                 value = s;
