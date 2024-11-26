@@ -32,7 +32,7 @@ public interface FailableToIntBiFunction<T, U, E extends Throwable> {
 
     /** NOP singleton */
     @SuppressWarnings("rawtypes")
-    FailableToIntBiFunction NOP = (t, u) -> 0;
+    FailableToIntBiFunction nop = (t, u) -> 0;
 
     /**
      * Returns The NOP singleton.
@@ -44,7 +44,7 @@ public interface FailableToIntBiFunction<T, U, E extends Throwable> {
      */
     @SuppressWarnings("unchecked")
     static <T, U, E extends Throwable> FailableToIntBiFunction<T, U, E> nop() {
-        return NOP;
+        return nop;
     }
 
     /**

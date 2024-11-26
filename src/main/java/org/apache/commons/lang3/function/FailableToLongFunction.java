@@ -31,7 +31,7 @@ public interface FailableToLongFunction<T, E extends Throwable> {
 
     /** NOP singleton */
     @SuppressWarnings("rawtypes")
-    FailableToLongFunction NOP = t -> 0L;
+    FailableToLongFunction nop = t -> 0L;
 
     /**
      * Returns The NOP singleton.
@@ -42,7 +42,7 @@ public interface FailableToLongFunction<T, E extends Throwable> {
      */
     @SuppressWarnings("unchecked")
     static <T, E extends Throwable> FailableToLongFunction<T, E> nop() {
-        return NOP;
+        return nop;
     }
 
     /**
