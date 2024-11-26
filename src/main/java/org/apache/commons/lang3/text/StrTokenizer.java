@@ -453,6 +453,7 @@ public class StrTokenizer implements ListIterator<String>, Cloneable {
     @Deprecated
     public Object clone() {
         return new StrTokenizer(this);
+        
     }
 
     /**
