@@ -434,13 +434,6 @@ public class StrTokenizer implements ListIterator<String>, Cloneable {
             }
         }
     }
-    public StrTokenizer(StrTokenizer other) {
-        if (other == null) {
-            throw new IllegalArgumentException("Cannot copy from a null object");
-        }
-        this.chars = (other.chars != null) ? other.chars.clone() : null;
-        this.reset();
-    }
 
     /**
      * Creates a new instance of this Tokenizer. The new instance is reset so
@@ -450,10 +443,12 @@ public class StrTokenizer implements ListIterator<String>, Cloneable {
      * @return a new instance of this Tokenizer which has been reset.
      */
     @Override
-    @Deprecated
     public Object clone() {
-        return new StrTokenizer(this);
-        
+        try {
+            return cloneReset();
+        } catch (final CloneNotSupportedException ex) {
+            return null;
+        }
     }
 
     /**
