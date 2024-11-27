@@ -28,7 +28,7 @@ public class FailableSupplierTest {
 
     @Test
     public void testNULL() throws Throwable {
-        assertNull(FailableSupplier.NUL.get());
+        assertNull(FailableSupplier.nul.get());
     }
 
     @Test
