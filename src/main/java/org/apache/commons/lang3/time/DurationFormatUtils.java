@@ -220,7 +220,7 @@ public class DurationFormatUtils {
 
     static final String s = "s";
 
-    static final String Sa = "S";
+    static final String Same = "S";
 
     /**
      * The internal method to do the formatting.
@@ -303,7 +303,7 @@ public class DurationFormatUtils {
                 if (!inOptional || !lastOutputZero) {
                     buffer.append(paddedValue(seconds, padWithZeros, count));
                 }
-            } else if (value.equals(Sa)) {
+            } else if (value.equals(Same)) {
                 lastOutputZero = milliseconds == 0;
                 if (!inOptional || !lastOutputZero) {
                     if (lastOutputSeconds) {
@@ -738,7 +738,7 @@ public class DurationFormatUtils {
                 value = s;
                 break;
             case 'S':
-                value = Sa;
+                value = Same;
                 break;
             default:
                 if (buffer == null) {
