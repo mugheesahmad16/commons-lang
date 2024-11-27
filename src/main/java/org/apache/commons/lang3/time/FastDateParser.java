@@ -755,6 +755,7 @@ public class FastDateParser implements DateParser, Serializable {
                 sb.append('\\');
             default:
                 sb.append(c);
+                break;
             }
         }
         if (sb.charAt(sb.length() - 1) == '.') {
