@@ -287,12 +287,12 @@ public class PairTest extends AbstractLangTest {
     public void testPairOfObjects() {
         final Pair<Integer, String> pair = Pair.of(0, "foo");
         assertInstanceOf(ImmutablePair.class, pair);
-        assertEquals(0, ((ImmutablePair<Integer, String>) pair).left.intValue());
-        assertEquals("foo", ((ImmutablePair<Integer, String>) pair).right);
+        assertEquals(0, ((ImmutablePair<Integer, String>) pair).leftValue.intValue());
+        assertEquals("foo", ((ImmutablePair<Integer, String>) pair).rightValue);
         final Pair<Object, String> pair2 = Pair.of(null, "bar");
         assertInstanceOf(ImmutablePair.class, pair2);
-        assertNull(((ImmutablePair<Object, String>) pair2).left);
-        assertEquals("bar", ((ImmutablePair<Object, String>) pair2).right);
+        assertNull(((ImmutablePair<Object, String>) pair2).leftValue);
+        assertEquals("bar", ((ImmutablePair<Object, String>) pair2).rightValue);
         final Pair<?, ?> pair3 = Pair.of(null, null);
         assertNull(pair3.getLeft());
         assertNull(pair3.getRight());
