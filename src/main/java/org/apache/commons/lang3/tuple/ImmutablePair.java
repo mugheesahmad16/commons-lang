@@ -165,10 +165,10 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
     }
 
     /** Left object */
-    public final L LEFT_1;
+    public final transient L left;
 
     /** Right object */
-    public final R RIGHT_1;
+    public final transient R right;
 
     /**
      * Create a new pair instance.
@@ -177,8 +177,8 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
      * @param right  the right value, may be null
      */
     public ImmutablePair(final L left, final R right) {
-        this.LEFT_1 = left;
-        this.RIGHT_1 = right;
+        this.left = left;
+        this.right = right;
     }
 
     /**
@@ -186,7 +186,7 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
      */
     @Override
     public L getLeft() {
-        return LEFT_1;
+        return left;
     }
 
     /**
@@ -194,7 +194,7 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
      */
     @Override
     public R getRight() {
-        return RIGHT_1;
+        return right;
     }
 
     /**
