@@ -586,19 +586,19 @@ public class DurationFormatUtilsTest extends AbstractLangTest {
             createTokenWithCount(DurationFormatUtils.M, 1),
             createTokenWithCount(DurationFormatUtils.d, 1),
             createTokenWithCount(DurationFormatUtils.H, 1),
-            createTokenWithCount(DurationFormatUtils.m, 1),
+            createTokenWithCount(DurationFormatUtils.ma, 1),
             createTokenWithCount(DurationFormatUtils.s, 1),
-            createTokenWithCount(DurationFormatUtils.S, 1) }, DurationFormatUtils.lexx("yMdHmsS"));
+            createTokenWithCount(DurationFormatUtils.SAME, 1) }, DurationFormatUtils.lexx("yMdHmsS"));
 
         // tests the ISO 8601-like
         assertArrayEquals(new DurationFormatUtils.Token[] {
             createTokenWithCount(DurationFormatUtils.H, 2),
             createTokenWithCount(new StringBuilder(":"), 1),
-            createTokenWithCount(DurationFormatUtils.m, 2),
+            createTokenWithCount(DurationFormatUtils.ma, 2),
             createTokenWithCount(new StringBuilder(":"), 1),
             createTokenWithCount(DurationFormatUtils.s, 2),
             createTokenWithCount(new StringBuilder("."), 1),
-            createTokenWithCount(DurationFormatUtils.S, 3) }, DurationFormatUtils.lexx("HH:mm:ss.SSS"));
+            createTokenWithCount(DurationFormatUtils.SAME, 3) }, DurationFormatUtils.lexx("HH:mm:ss.SSS"));
 
         // test the iso extended format
         assertArrayEquals(new DurationFormatUtils.Token[] {
@@ -611,11 +611,11 @@ public class DurationFormatUtilsTest extends AbstractLangTest {
             createTokenWithCount(new StringBuilder("DT"), 1),
             createTokenWithCount(DurationFormatUtils.H, 1),
             createTokenWithCount(new StringBuilder("H"), 1),
-            createTokenWithCount(DurationFormatUtils.m, 1),
+            createTokenWithCount(DurationFormatUtils.ma, 1),
             createTokenWithCount(new StringBuilder("M"), 1),
             createTokenWithCount(DurationFormatUtils.s, 1),
             createTokenWithCount(new StringBuilder("."), 1),
-            createTokenWithCount(DurationFormatUtils.S, 3),
+            createTokenWithCount(DurationFormatUtils.SAME, 3),
             createTokenWithCount(new StringBuilder("S"), 1) }, DurationFormatUtils.lexx(DurationFormatUtils.ISO_EXTENDED_FORMAT_PATTERN));
 
         // test failures in equals

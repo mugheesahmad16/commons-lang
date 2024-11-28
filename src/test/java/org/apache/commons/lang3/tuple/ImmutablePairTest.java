@@ -45,9 +45,9 @@ public class ImmutablePairTest extends AbstractLangTest {
         ImmutablePair<Integer, String> nowPair;
         for (int i = 0; i < 4; i++) {
             nowPair = ImmutablePair.of(oldPair);
-            assertEquals(0, nowPair.left.intValue());
+            assertEquals(0, nowPair.LEFT.intValue());
             assertEquals(0, nowPair.getLeft().intValue());
-            assertEquals("foo", nowPair.right);
+            assertEquals("foo", nowPair.RIGHT);
             assertEquals("foo", nowPair.getRight());
             assertEquals(oldPair, nowPair);
             oldPair = nowPair;
@@ -57,9 +57,9 @@ public class ImmutablePairTest extends AbstractLangTest {
         ImmutablePair<Object, String> nowPair2;
         for (int i = 0; i < 4; i++) {
             nowPair2 = ImmutablePair.of(oldPair2);
-            assertNull(nowPair2.left);
+            assertNull(nowPair2.LEFT);
             assertNull(nowPair2.getLeft());
-            assertEquals("bar", nowPair2.right);
+            assertEquals("bar", nowPair2.RIGHT);
             assertEquals("bar", nowPair2.getRight());
             oldPair2 = nowPair2;
         }
@@ -162,8 +162,8 @@ public class ImmutablePairTest extends AbstractLangTest {
         assertThrows(NullPointerException.class, () -> ImmutablePair.ofNonNull(null, "x"));
         assertThrows(NullPointerException.class, () -> ImmutablePair.ofNonNull("x", null));
         final ImmutablePair<String, String> pair = ImmutablePair.ofNonNull("x", "y");
-        assertEquals("x", pair.left);
-        assertEquals("y", pair.right);
+        assertEquals("x", pair.LEFT);
+        assertEquals("y", pair.RIGHT);
     }
 
     @Test
@@ -179,18 +179,18 @@ public class ImmutablePairTest extends AbstractLangTest {
     @Test
     public void testPairOfObjects() {
         final ImmutablePair<Integer, String> pair = ImmutablePair.of(0, "foo");
-        assertEquals(0, pair.left.intValue());
+        assertEquals(0, pair.LEFT.intValue());
         assertEquals(0, pair.getLeft().intValue());
-        assertEquals("foo", pair.right);
+        assertEquals("foo", pair.RIGHT);
         assertEquals("foo", pair.getRight());
         final ImmutablePair<Object, String> pair2 = ImmutablePair.of(null, "bar");
-        assertNull(pair2.left);
+        assertNull(pair2.LEFT);
         assertNull(pair2.getLeft());
-        assertEquals("bar", pair2.right);
+        assertEquals("bar", pair2.RIGHT);
         assertEquals("bar", pair2.getRight());
         final ImmutablePair<?, ?> pair3 = ImmutablePair.of(null, null);
-        assertNull(pair3.left);
-        assertNull(pair3.right);
+        assertNull(pair3.LEFT);
+        assertNull(pair3.RIGHT);
     }
 
     @Test

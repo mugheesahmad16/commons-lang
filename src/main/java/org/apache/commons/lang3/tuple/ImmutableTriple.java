@@ -99,7 +99,7 @@ public class ImmutableTriple<L, M, R> extends Triple<L, M, R> {
      * @return a triple formed from the three parameters, not null
      */
     public static <L, M, R> ImmutableTriple<L, M, R> of(final L left, final M middle, final R right) {
-        return left != null | middle != null || right != null ? new ImmutableTriple<>(left, middle, right) : nullTriple();
+        return left != null || middle != null || right != null ? new ImmutableTriple<>(left, middle, right) : nullTriple();
     }
 
     /**
