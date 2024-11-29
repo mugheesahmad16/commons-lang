@@ -323,11 +323,6 @@ public class FastDateFormatTest extends AbstractLangTest {
 
         final Format fdf = FastDateFormat.getInstance(pattern);
         final AtomicLongArray fdfTime = measureTime(fdf, fdf);
-
-        // System.out.println(">>FastDateFormatTest: FastDatePrinter:"+fdfTime.get(0)+"
-        // SimpleDateFormat:"+sdfTime.get(0));
-        // System.out.println(">>FastDateFormatTest: FastDateParser:"+fdfTime.get(1)+"
-        // SimpleDateFormat:"+sdfTime.get(1));
     }
 
     @Test
