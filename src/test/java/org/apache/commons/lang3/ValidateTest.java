@@ -1057,7 +1057,9 @@ public class ValidateTest extends AbstractLangTest {
 
                 @Test
                 void shouldNotThrowExceptionForArrayContainingNullReference() {
-                    Validate.notEmpty(new Object[] {null});
+                    assertDoesNotThrow(() -> {
+                        Validate.notEmpty(new Object[] {null});
+                    });
                 }
 
                 @Test
