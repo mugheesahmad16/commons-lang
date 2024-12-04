@@ -1265,7 +1265,9 @@ public class ValidateTest extends AbstractLangTest {
 
                 @Test
                 void shouldNotThrowExceptionForMapContainingNullMapping() {
-                    Validate.notEmpty(Collections.singletonMap("key", null), "MSG");
+                    assertDoesNotThrow(() -> {
+                        Validate.notEmpty(Collections.singletonMap("key", null), "MSG");
+                    });
                 }
 
                 @Test
